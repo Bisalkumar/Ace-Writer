@@ -1,0 +1,63 @@
+#aboutus {
+    padding: 80px 120px;
+    text-align: center;
+    
+   color: #fff;
+}
+
+#aboutus h3 {
+    font-family: Inter, sans-serif;
+    color: #6F38C5;
+    font-size: 29PX;
+    font-weight: 700;
+}
+
+#aboutus p {
+    padding: 0px 10px;
+    font-size: 22px;
+    padding-top: 20px;
+    line-height: 40px;
+    font-family: Inter, sans-serif;
+}
+
+#about-container {
+    padding: 5rem 2rem 3rem 2rem;
+    background-color: rgb(17 24 39);
+    background-position: fixed;
+    text-align: center;
+}
+
+#about-container h3 {
+    color:  rgb(192 132 252);
+    font-weight: 500;
+    font-size: 28px;
+    font-family: Inter, sans-serif;
+}
+
+.about-img {
+    width: 120px;
+}
+
+.about-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+.carousel-item {
+    padding: 3% 15%;
+}
+
+em {
+    color: #fff;
+}
+
+
+@media(max-width:762px) {
+    #aboutus {
+        padding: 40px 20px;
+    }
+}
+
+
+

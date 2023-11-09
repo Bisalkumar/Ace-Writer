@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Ace Writer - smmarizer text</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='images/list.png') }}">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" 
+ rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+<body>
+  <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+  <!-- ======= navbar ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="{{url_for('home')}}" class="nav-link scrollto active"><i class="bx bx-home"></i>
+            <span>Home</span></a></li>
+        <li><a href="{{url_for('index')}}" class="nav-link scrollto"> <i
+              class=" fas fa-solid fa-gear"></i><span>Summarizer</span></a>
+        </li>
+        <li><a href="{{url_for('compare_summary')}}" class="nav-link scrollto"><i
+              class=" fas fa-solid fa-scale-balanced"></i> <span>Comparer</span></a>
+        </li>
+        <li><a href="{{url_for('plagarism')}}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+            <span>Plagarism</span></a>
+        </li>
+        <li><a href="{{url_for('file_converter')}}" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
+            <span>File
+              converter</span></a></li>
+        <li><a href="{{url_for('essaygrader')}}" class="nav-link scrollto"><i class=" fas fa-light fa-file-pen"></i>
+            <span>Essay
+              grader</span></a>
+        </li>
+
+        <li><a href="{{url_for('aboutus')}}" class="nav-link scrollto"><i class="bx bx-user"></i><span>About</span></a>
+        </li>
+      </ul>
+      </ul>
+    </nav><!-- .nav-menu -->
+  </header><!-- End Header -->
+
+
+
+
+  <div class="max-width">
+    <nav class="nav-summary">
+      <span>Summary generator</span>
+    </nav>
+  </div>
+
+
+  <!----------------------------choose your input type  button  ------------------------------------->
+  <div class="choose-input">
+    <div class="head">
+      <h4>choose your input type</h4>
+    </div>
+    <nav>
+      <div class="row justify-content-center">
+        <div class="col-sm-3">
+
+          <button id="bottone5" class="tab-button" onclick="showSectionContent(1)"> <i
+              class=" fas fa-solid fa-text"></i>
+            Text</button>
+        </div>
+        <div class="col-sm-3">
+
+          <button id="bottone5" class="tab-button" onclick="showSectionContent(2)"><i class=" fas fa-solid fa-link"></i>
+            Link</button>
+        </div>
+        <div class="col-sm-3">
+
+          <button id="bottone5" class="tab-button" onclick="showSectionContent(3)"><i
+              class="fas fa-thin fa-file-pdf"></i> PDF</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+
+  <!-------------------------------------------------text-section------------------------------------------------->
+
+  <section id="section1" class="tab-section">
+    <!-- <h3>Compare your text </h3> -->
+    <div class="col">
+      <form method="POST" action="/analyze">
+        <textarea name="rawtext" id="" cols="10" rows="10" placeholder="enter the your  text here......"></textarea>
+      <button type="submit" class="summarize mt-5">summarize</button>
+    </form>
+    </div>
+    <div class="text-result">
+      <div class="row justify-content-between">
+        <div class="col-md-6">
+          <h4>Your input text</h4>
+          <div class="result-box">
+            <p>{{ctext}}
+            </p>
+          </div>
+          <p>READING TIME: {{ final_reading_time }} MINUTES</p>
+          <p>time elapsed :</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Text Summary</h4>
+          <div class="result-box">
+            <p>{{ final_summary }}
+            </p>
+          </div>
+          <p>READING TIME: {{ summary_reading_time }} MINUTES</p>
+          <p>TIME ELAPSED:{{ final_time }} MINUTES</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!------------------------------------link section---------------------------------------->
+  <section id="section2" class="tab-section">
+    <!-- <h3>Compare your text </h3> -->
+    <div class="col">
+      <form method="POST" action="/analyze_url">
+        <input type="text" placeholder="Enter the link">
+        <button type="button" class="summarize mt-5">summarize</button>
+      </form>
+    </div>
+    <div class="text-result">
+      <div class="row justify-content-between">
+        <div class="col-md-6">
+          <h4>Your Input Link</h4>
+          <div class="result-box">
+            <p>{{ctext}}
+            </p>
+          </div>
+          <p>READING TIME: {{ final_reading_time }} MINUTES</p>
+          <p>time elapsed :</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Text Summary</h4>
+          <div class="result-box">
+            <p>{{ final_summary }}
+            </p>
+          </div>
+          <p>READING TIME: {{ summary_reading_time }} MINUTES</p>
+          <p>TIME ELAPSED:{{ final_time }} MINUTES</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--------------------------------------------pdf section----------------------------- -->
+
+  <section id="section3" class="tab-section">
+    <div class="col">
+      <form method="POST" action="/analyze_pdf">
+        <div class="file-input">
+          <input type="file" accept="application/pdf" name="pdf_file" />
+          <label class="file-input__label" for="file-input">
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="upload"
+              class="svg-inline--fa fa-upload fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512">
+              <path fill="currentColor"
+                d="M296 384h-80c-13.3 0-24-10.7-24-24V192h-87.7c-17.8 0-26.7-21.5-14.1-34.1L242.3 5.7c7.5-7.5 19.8-7.5 27.3 0l152.2 152.2c12.6 12.6 3.7 34.1-14.1 34.1H320v168c0 13.3-10.7 24-24 24zm216-8v112c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V376c0-13.3 10.7-24 24-24h136v8c0 30.9 25.1 56 56 56h80c30.9 0 56-25.1 56-56v-8h136c13.3 0 24 10.7 24 24zm-124 88c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20zm64 0c0-11-9-20-20-20s-20 9-20 20 9 20 20 20 20-9 20-20z">
+              </path>
+            </svg>
+            <span>Upload File/PDF</span></label>
+          <button type="button" class="summarize mt-5">summarize</button>
+        </div>
+      </form>
+    </div>
+    <div class="text-result">
+      <div class="row justify-content-between">
+        <div class="col-md-6">
+          <h4>Your Input PDF Document</h4>
+          <div class="result-box">
+            <p>{{ctext}}</p>
+          </div>
+          <p>READING TIME: {{ final_reading_time }} MINUTES</p>
+          <p>time elapsed :</p>
+
+        </div>
+        <div class="col-md-6">
+          <h4>Text Summary</h4>
+          <div class="result-box">
+            <p>
+              {{ final_summary }}
+            </p>
+          </div>
+          <p>READING TIME: {{ summary_reading_time }} MINUTES:</p>
+          <p>TIME ELAPSED:{{ final_time }} MINUTES</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- ==========================================Footer ============================================ -->
+  <footer id="footer">
+    <span class="me-5"><strong>Ace Writer</strong>© 2023 All Rights Reserved</span> <a class=" navbar-brand"
+      href="www.google.com"> <span><i class="fa-sharp fas fa-solid fa-paper-plane"></i></span>
+      Get in touch</a>
+  </footer>
+
+
+  <!--------------------back to top arrow  -->
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/typed.js/typed.min.js"></script>
+  <script src="../static/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+  <script src="https://kit.fontawesome.com/8852fcb725.js" crossorigin="anonymous"></script>
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/summary.js') }}"></script>
+
+
+</body>
+
+</html>

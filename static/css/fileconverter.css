@@ -1,0 +1,40 @@
+#file-converter{
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: rgb(17 24 39);
+}
+#file-converter h3{
+    color: #6F38C5;
+    font-size: 29PX;
+    font-weight: 700;
+    padding-bottom: 50PX;
+}
+
+
+#file-converter .file-box{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.arrow-box img{
+    width: 40px;
+    margin-top: 20px;
+    height: 100px;
+}
+
+.conversion-type select{
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8PX;
+}
+.conversion-type  h5{
+    padding-top: 10px;
+    color: #fff;
+}
+
+
+.summarize{
+    max-width: 120px;
+    margin: 40px auto;
+}

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ace writer - compare </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/compare.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" rel="stylesheet" />
+    <!-- favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/list.png') }}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600&family=Baloo+Bhai+2&family=Baloo+Bhaina+2&family=Baloo+Tammudu+2&family=Balsamiq+Sans&family=Bree+Serif&family=Epilogue:wght@200&family=Inter:wght@300;400&family=Itim&family=Kanit&family=Lato:wght@700&family=Montserrat:wght@100;400;900&family=Noto+Sans:wght@200&family=Nunito+Sans&family=Nunito:wght@200;700&family=Open+Sans:ital,wght@0,400;1,300&family=Outfit:wght@300&family=Poppins:ital,wght@1,200&family=Roboto:ital,wght@0,100;0,500;1,500&family=Rubik:wght@500&family=Sacramento&family=Sofia+Sans:wght@600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!------------------------------navbar-------------------->
+    <!-- ======= Mobile nav toggle button ======= -->
+    <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
+    <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex flex-column justify-content-center">
+
+        <nav id="navbar" class="navbar nav-menu">
+            <ul>
+                <li><a href="{{url_for('home')}}" class="nav-link scrollto active"><i class="bx bx-home"></i>
+                        <span>Home</span></a></li>
+                <li><a href="{{url_for('index')}}" class="nav-link scrollto"> <i
+                            class=" fas fa-solid fa-gear"></i><span>Summarizer</span></a>
+                </li>
+                <li><a href="{{url_for('compare_summary')}}" class="nav-link scrollto"><i
+                            class=" fas fa-solid fa-scale-balanced"></i> <span>Comparer</span></a>
+                </li>
+                <li><a href="{{url_for('plagarism')}}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                        <span>Plagarism</span></a>
+                </li>
+                <li><a href="{{url_for('file_converter')}}" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
+                        <span>File
+                            converter</span></a></li>
+                <li><a href="{{url_for('essaygrader')}}" class="nav-link scrollto"><i
+                            class=" fas fa-light fa-file-pen"></i> <span>Essay
+                            grader</span></a>
+                </li>
+
+                <li><a href="{{url_for('aboutus')}}" class="nav-link scrollto"><i
+                            class="bx bx-user"></i><span>About</span></a></li>
+            </ul>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </header><!-- End Header -->
+
+
+
+    <section id="compare-text">
+        <h3>Compare your text </h3>
+        <div class="col">
+            <form action="#" method="">
+                <textarea name="" id="" cols="10" rows="10" placeholder="enter the text......."></textarea>
+                <button class="summarize mt-5" type="button">summarize</button>
+            </form>
+
+        </div>
+
+
+
+
+        <div class="col pt-5 mt-5">
+            <h3>your input text</h3>
+            <!-- <form action="" post="">
+                <textarea name="" id="" cols="10" rows="10" placeholder="enter the text......."></textarea> 
+            </form> -->
+            <div class="compare-input-text">
+                <p>
+                    lorem2000
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-------------------------------four type of algorthim are used------------------- -->
+    <section class="algo">
+        <section id="alogorithim">
+            <div class="row mt-4 justify-content-between">
+                <div class="col-md-6">
+                    <h4>GENSIM SUMMARIZER</h4>
+                    <div class="algo-box">
+
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, suscipit doloremque vero
+                            facere ratione, debitis odit corporis ex accusamus voluptas adipisci quam soluta autem iusto
+                            repellat mollitia culpa hic quas.
+
+                        </p>
+                    </div>
+                    <div class="reading">
+                        <p>Time reading: </p>
+                        <p class="ps-2">Time elapshed: </p>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6">
+                    <h4>NATURAL LANGUAGE TOOLKIT</h4>
+                    <div class="algo-box">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut enim inventore velit unde est
+                            commodi, quidem alias dolores tempora harum consequuntur possimus consectetur delectus
+
+                        </p>
+
+                    </div>
+                    <div class="reading">
+                        <p>Time reading: </p>
+                        <p class="ps-2">Time elapshed: </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row mt-4 pt-5 justify-content-around">
+                <div class="col-md-6">
+                    <h4>SPACY SUMMARIZER</h4>
+                    <div class="algo-box">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere quibusdam dolor explicabo
+                            minus pariatur aspernatur ad quae ex. Maiores reiciendis ratione nam dolor vitae nesciunt
+                            maxime et velit dolorum quae!
+                            ;</p>
+
+                    </div>
+                    <div class="reading">
+                        <p>Time reading: </p>
+                        <p class="ps-2">Time elapshed: </p>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <h4>SUMY LEXRANK</h4>
+                    <div class="algo-box">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Ipsam expedita consectetur quas ex hic nulla repellat voluptas d
+                            icta. Minus blanditiis sunt quasi mollitia non consequatur nemo magnam
+
+
+                        </p>
+
+                    </div>
+                    <div class="reading">
+                        <p>Time reading: </p>
+                        <p class="ps-2">Time elapshed: </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ==========================================Footer ======= -->
+    <footer id="footer">
+        <span class="me-5"><strong>Ace Writer</strong>© 2023 All Rights Reserved</span> <a class=" navbar-brand"
+            href="www.google.com"> <span><i class="fa-sharp fas fa-solid fa-paper-plane"></i></span>
+            Get in touch</a>
+    </footer>
+
+
+
+    <!--------------------------------back-to-top -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/style.js') }}"></script>
+
+    <!-- Vendor JS Files -->
+    <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../static/vendor/aos/aos.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/vendor/typed.js/typed.min.js"></script>
+    <script src="../static/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../static/vendor/php-email-form/validate.js"></script>
+    <script src="https://kit.fontawesome.com/8852fcb725.js" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

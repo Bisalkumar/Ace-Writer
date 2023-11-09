@@ -1,0 +1,146 @@
+#plagarism-text {
+    padding: 8rem 1rem;
+    text-align: center;
+    background-color: rgb(17 24 39);
+
+}
+
+#plagarism-text h3 {
+    color: #6F38C5;
+    font-size: 29PX;
+    font-weight: 700;
+}
+
+.col textarea {
+    width: 80%;
+    height: 300px;
+    padding: 12px 20px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: rgb(30 41 59);
+    font-size: 16px;
+    resize: none;
+    font-family: 'Heebo', sans-serif;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.003);
+}
+
+.col textarea:focus,
+.col textarea:hover {
+    outline: none;
+    border-color: rgba(51, 50, 50, 0.4);
+    background-color: rgb(30 41 59);
+    box-shadow: 0 0 0 4px rgba(45, 44, 44, 0.1);
+}
+
+
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(30 41 59);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #6d6d6d;
+}
+
+
+.per-plaga {
+    max-width: 800px;
+    margin: auto;
+}
+
+.per-plaga p {
+    color: #6F38C5;
+    font-size: 26px;
+    padding-top: 70px;
+}
+
+.per-plaga h4 {
+    font-size: 28px;
+    margin-top: 40px;
+    color: aliceblue;
+}
+
+.plaga-result span {
+    color: #fff;
+    font-size: 26px;
+}
+
+
+.per-plaga-text {
+    max-width: 80%;
+    margin: auto;
+    height: 300px;
+    padding: 10px 20px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: rgb(30 41 59);
+    font-size: 16px;
+    resize: none;
+    font-family: 'Heebo', sans-serif;
+    box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.003);
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.per-plaga-text p {
+    color: #fff;
+    font-size: 17px;
+    text-align: justify;
+    padding: 10px;
+}
+
+.plaga-checkbox h4 {
+    margin-top: 50px;
+    color: #6F38C5;
+    font-size: 20px;
+}
+
+.check-box {
+    max-width: 300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.check-box h5 {
+    color: #fff;
+    padding-bottom: 5px;
+
+}
+
+.check-box input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.check-box input[type=checkbox]:checked {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #6F38C5;
+    border-radius: 8px;
+}
+
+.check-box input[type=checkbox]:after {
+
+    background-color: rgb(30 41 59);
+    
+}
+
+input[type=checkbox]:checked:before {
+    background-color: green;
+}

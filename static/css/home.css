@@ -1,0 +1,226 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none;
+    /* background-color: rgb(17 24 39); */
+    background-image: url("../images/panoramic-view-sunset-night.jpg");
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px #1c1c1c7a;
+
+    
+
+
+}
+
+header {
+    width: 100%;
+    padding: 20px 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+nav .logo img{
+    width: 50px;
+}
+nav .logo a  {
+    text-decoration: none;
+    list-style: none;
+    width: 50px;
+    color: #ece9e9;
+    font-size: 26px;
+
+}
+
+
+.content {
+    padding: 30px 20px;
+    background-color: transparent;
+    color: #989696;
+}
+
+.content .content-container {
+    /* border: 1px solid rgb(103, 102, 102); */
+    /* outline: 1px solid rgb(70, 70, 70); */
+    max-width: 1200px;
+    margin: 40px auto;
+    font-size: 15px;
+    height: 300px;
+    text-align: justify;
+    padding: 40px;
+    border-radius: 8px;
+    background-color: #161b22;
+}
+
+
+/* .content .content-container:hover {
+
+
+    background: linear-gradient(135deg, #0b0b0b 0%, #150934 100%);
+} */
+
+.content .content-container p {
+    color: #d1cfcf;
+    font-size: 17px;
+    font-family: Inter, sans-serif;
+    line-height: 33px;
+    text-align: inherit;
+}
+
+
+
+.content .about-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 60px 0px;
+}
+
+.content .about-content .col-lg-2 {
+    text-align: center;
+    /* outline: 1px solid rgb(102, 103, 102); */
+    padding: 40px 10px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+
+    background-color: #161b22;
+}
+
+.content .about-content .col-lg-2 h4 {
+    text-align: center;
+    font-weight: 600;
+    font-family: Inter, sans-serif;
+    padding-bottom: 10px;
+    color: #ffffff !important;
+
+}
+
+.content .about-content .col-lg-2 p {
+    color: rgba(235,245,255,.5) !important;
+}
+
+.content .about-content button a {
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+.content .about-content button {
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border: none;
+    outline: 2px solid #6e40c9;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    background: linear-gradient(180deg, rgba(183, 52, 179, 0.15) 0%, rgba(164, 46, 156, 0) 100%), #6e40c9 !important;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+/* teams section styling */
+
+#aboutus {
+    width: 100%;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+#aboutus p {
+    padding: 0px 10px;
+    font-size: 22px;
+    padding-top: 20px;
+    color: #fff;
+}
+#aboutus h3{
+    color: #fff;
+}
+
+
+#about-container {
+    padding: 3rem 1rem 3rem 1rem;
+    background-color: transparent;
+    background-position: fixed;
+    text-align: center;
+}
+
+#about-container h3 {
+    padding-top: 90px;
+    color: rgb(255, 255, 255);
+}
+
+.about-img {
+    width: 120px;
+}
+
+.about-text {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.carousel-item {
+    padding: 10% 15%;
+    color: #ece9e9;
+    font-family: Inter, sans-serif;
+}
+
+.carousel-item img {
+    border-radius: 50%;
+    outline: 5px solid #c3c2c4;
+}
+
+.carousel-item p i {
+    position: relative;
+    bottom: 14px;
+    right: 10px;
+    font-size: 15px;
+    color: #989696;
+}
+
+.carousel-item p .Rights {
+
+    position: relative;
+    top: 14px;
+    left: 10px;
+    font-size: 15px;
+    color: #989696;
+}
+
+
+@media(max-width:762px) {
+    #aboutus {
+        padding: 40px 10px;
+        font-size: 15px;
+    }
+}
+
+
+
+
+
+@media(max-width:1184px){
+    .content{
+        padding: 30px 50px;
+        
+    }
+    .content .content-container {
+        padding: 20px;
+        height: 400px;
+    }
+    .content .content-container p{
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
