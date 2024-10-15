@@ -138,7 +138,7 @@
 .check-box input[type=checkbox]:after {
 
     background-color: rgb(30 41 59);
-    
+
 }
 
 input[type=checkbox]:checked:before {

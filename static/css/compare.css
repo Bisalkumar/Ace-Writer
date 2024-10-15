@@ -11,9 +11,15 @@
     font-weight: 700;
 }
 
+.col form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .col textarea {
-    width: 80%;
-    height: 300px;
+    width: 60%;
+    height: 100px;
     padding: 12px 20px;
     margin-top: 30px;
     box-sizing: border-box;
@@ -33,10 +39,16 @@
     box-shadow: 0 0 0 4px rgba(45, 44, 44, 0.1);
 }
 
+.algo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .compare-input-text {
-    max-width: 80%;
+    max-width: 60%;
     margin: 30px auto;
-    height: 300px;
+    height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -96,7 +108,7 @@
 
 .algo-box p {
     border: none;
-    height: 300px;
+    height: 100px;
     width: 100%;
     border-radius: 6px;
     text-align: justify;
@@ -172,8 +184,3 @@
         width: 90%;
     }
 }
-
-
-
-
-

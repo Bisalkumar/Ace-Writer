@@ -307,9 +307,8 @@ h6 {
 }
 
 .choose-input nav {
-
   max-width: 800px;
-  margin: 100px auto;
+  margin: auto;
   color: #fff;
 }
 
@@ -377,9 +376,15 @@ h6 {
   background: transparent;
 }
 
+.col form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .col textarea {
-  width: 70%;
-  height: 300px;
+  width: 60%;
+  height: 200px;
   padding: 12px 20px;
   margin-top: 10px;
   box-sizing: border-box;

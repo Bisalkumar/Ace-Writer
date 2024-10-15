@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Ace Writer - Plagiarism Checker</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link rel="icon" href="{{ url_for('static', filename='images/list.png') }}">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/plagiarism.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+    <!-- ======= navbar ======= -->
+    <header id="header" class="d-flex flex-column justify-content-center">
+        <nav id="navbar" class="navbar nav-menu">
+            <ul>
+                <li><a href="{{ url_for('home') }}" class="nav-link scrollto active"><i class="bx bx-home"></i>
+                        <span>Home</span></a></li>
+                <li><a href="{{ url_for('index') }}" class="nav-link scrollto"><i class="fas fa-solid fa-gear"></i><span>Summarizer</span></a></li>
+                <li><a href="{{ url_for('compare_summary') }}" class="nav-link scrollto"><i class="fas fa-solid fa-scale-balanced"></i> <span>Comparer</span></a></li>
+                <li><a href="{{ url_for('plagiarism') }}" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+                        <span>Plagiarism</span></a></li>
+                <li><a href="{{ url_for('file_converter') }}" class="nav-link scrollto"><i class="bx bx-file-blank"></i>
+                        <span>File Converter</span></a></li>
+                <li><a href="{{ url_for('essaygrader') }}" class="nav-link scrollto"><i class="fas fa-light fa-file-pen"></i> <span>Essay Grader</span></a></li>
+                <li><a href="{{ url_for('aboutus') }}" class="nav-link scrollto"><i class="bx bx-user"></i><span>About</span></a></li>
+            </ul>
+        </nav><!-- .nav-menu -->
+    </header><!-- End Header -->
+
+    <section id="plagiarism-text">
+        <h3>Plagiarism Checker</h3>
+        <div class="col">
+            <form id="plagiarismForm" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="original">Upload the original document:</label>
+                    <input type="file" id="original" name="original" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="check">Upload the document to check:</label>
+                    <input type="file" id="check" name="check" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="threshold">Set Similarity Threshold (0-1):</label>
+                    <input type="number" id="threshold" name="threshold" class="form-control" step="0.01" min="0" max="1" value="0.5" required>
+                </div>
+                <button class="summarize mt-5" type="submit">Check for Plagiarism</button>
+            </form>
+        </div>
+
+        <div class="per-plaga" id="resultContainer" style="display: none;">
+            <div class="plaga-result">
+                <p>Percentage of Plagiarism:</p>
+                <span id="plagiarismPercentage">0%</span>
+            </div>
+
+            <h4>Plagiarized Sentences:</h4>
+            <div class="per-plaga-text" id="plagiarizedTextContainer">
+                <p>No sentences detected.</p>
+            </div>
+
+            <div class="plaga-checkbox">
+                <h4>Do you want to paraphrase it?</h4>
+                <div class="check-box">
+                    <div class="yes">
+                        <h5>YES?</h5>
+                        <input type="checkbox" id="paraphraseYes">
+                    </div>
+                    <div class="no">
+                        <h5>NO?</h5>
+                        <input type="checkbox" id="paraphraseNo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================Footer =======  -->
+    <footer id="footer">
+        <span class="me-5"><strong>Ace Writer</strong>© 2023 All Rights Reserved</span>
+        <a class="navbar-brand" href="www.google.com"><span><i class="fa-sharp fas fa-solid fa-paper-plane"></i></span> Get in touch</a>
+    </footer>
+
+    <!--------------------back to top arrow  -->
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="../static/vendor/aos/aos.js"></script>
+    <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="../static/vendor/typed.js/typed.min.js"></script>
+    <script src="../static/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="../static/vendor/php-email-form/validate.js"></script>
+    <script src="https://kit.fontawesome.com/8852fcb725.js" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        document.getElementById('plagiarismForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Create FormData object to send files
+            const formData = new FormData(this);
+
+            // Perform AJAX request to the server
+            fetch('{{ url_for("plagiarism") }}', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Assuming 'plagiarism_percentage' and 'plagiarized_sentences' are returned from the server
+                document.getElementById('plagiarismPercentage').innerText = data.plagiarism_percentage + '%';
+                document.getElementById('plagiarizedTextContainer').innerText = data.plagiarized_sentences.length > 0 ? data.plagiarized_sentences.join(', ') : 'No sentences detected.'; // Handle empty results
+                document.getElementById('resultContainer').style.display = 'block'; // Show results
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+
+</html>
