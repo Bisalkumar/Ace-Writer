@@ -1,0 +1,12 @@
+2024-10-22 13:27:33,363 - AppLogger - DEBUG - Request Method: GET, Path: /
+2024-10-22 13:27:33,475 - AppLogger - DEBUG - Request Method: GET, Path: /static/css/home.css
+2024-10-22 13:27:33,495 - AppLogger - DEBUG - Request Method: GET, Path: /static/css/bootstrap.css
+2024-10-22 13:27:33,495 - AppLogger - DEBUG - Request Method: GET, Path: /static/css/index.css
+2024-10-22 13:27:33,495 - AppLogger - DEBUG - Request Method: GET, Path: /static/images/postcard.png
+2024-10-22 13:27:33,495 - AppLogger - DEBUG - Request Method: GET, Path: /static/images/testimonials-1.jpg
+2024-10-22 13:27:33,512 - AppLogger - DEBUG - Request Method: GET, Path: /static/images/testimonials-2.jpg
+2024-10-22 13:27:33,803 - AppLogger - DEBUG - Request Method: GET, Path: /static/images/testimonials-3.jpg
+2024-10-22 13:27:33,835 - AppLogger - DEBUG - Request Method: GET, Path: /static/images/testimonials-4.jpg
+2024-10-22 13:27:33,836 - AppLogger - DEBUG - Request Method: GET, Path: /static/js/main.js
+2024-10-22 13:27:33,852 - AppLogger - DEBUG - Request Method: GET, Path: /static/js/index.js
+2024-10-22 13:27:33,896 - AppLogger - DEBUG - Request Method: GET, Path: /static/images/panoramic-view-sunset-night.jpg
